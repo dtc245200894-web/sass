@@ -1,0 +1,24 @@
+// Tái cấu trúc phần layout container và grid
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $spacing;
+
+  // Sử dụng Nesting (lồng nhau) chuẩn SASS
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -($spacing / 2);
+
+    .col {
+      padding: ($spacing / 2);
+      flex: 1;
+      
+      // Ví dụ chia cột cơ bản
+      &-12 { flex: 0 0 100%; }
+      &-6  { flex: 0 0 50%; }
+      &-4  { flex: 0 0 33.333%; }
+    }
+  }
+}
